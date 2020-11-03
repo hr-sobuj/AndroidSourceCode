@@ -35,20 +35,21 @@ public class AppController extends Application {
         return mRequestQueue;
     }
 
-/*    public ImageLoader getImageLoader() {
+    public ImageLoader getImageLoader() {
         getRequestQueue();
         if (mImageLoader == null) {
             mImageLoader = new ImageLoader(this.mRequestQueue,
                     new LruBitmapCache());
         }
         return this.mImageLoader;
-    }*/
+    }
 
     public <T> void addToRequestQueue(Request<T> req, String tag) {
         // set the default tag if tag is empty
         req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
         getRequestQueue().add(req);
     }
+
 
     public <T> void addToRequestQueue(Request<T> req) {
         req.setTag(TAG);
